@@ -2,7 +2,7 @@
 
 Express Note Taker is a web application that allows users to write, save, view, and delete notes. It provides a simple and intuitive interface for users to organize their thoughts and keep track of tasks.
 
-![Screenshot](screenshot.png)
+![Screenshot](/public/images/screenshot.png)
 
 ## Features
 
@@ -40,7 +40,9 @@ This application can be deployed to platforms like Heroku for public access. Fol
 
 ## Credits
 
-This project was created as a part of the Express.js Challenge in [Bootcamp Name]. The starter code and requirements were provided by [Bootcamp Name].
+This project was created as a part of the Express.js Challenge in University of Denver Bootcamp. The starter code and requirements were provided by University of Denver Bootcamp.
+
+Utilized ChatGPT as a tool when I hit a dead end or needed assistance. 
 
 ## License
 
