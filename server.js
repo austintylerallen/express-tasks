@@ -31,11 +31,9 @@ app.get('/api/notes', (req, res) => {
   fs.readFile(path.join(__dirname, 'Develop', 'db', 'db.json'), 'utf8', (err, data) => {
     if (err) {
       if (err.code === 'ENOENT') {
-        // Handle case where file doesn't exist
         console.error('db.json file does not exist');
         return res.status(500).json({ error: 'Internal Server Error' });
       } else {
-        // Handle other file read errors
         console.error(err);
         return res.status(500).json({ error: 'Internal Server Error' });
       }
@@ -44,7 +42,6 @@ app.get('/api/notes', (req, res) => {
     // Initialize notes as an empty array if the file is empty
     let notes = [];
     
-    // Parse JSON data if the file is not empty
     if (data) {
       try {
         notes = JSON.parse(data);
@@ -54,15 +51,13 @@ app.get('/api/notes', (req, res) => {
       }
     }
 
-    // Return notes
     res.json(notes);
   });
 });
 
-// Route to add a new note to db.json
 app.post('/api/notes', (req, res) => {
   const newNote = req.body;
-  newNote.id = generateUniqueId(); // Generate unique ID for the new note
+  newNote.id = generateUniqueId();
   fs.readFile(path.join(__dirname, 'Develop', 'db', 'db.json'), 'utf8', (err, data) => {
     if (err) {
       console.error(err);
